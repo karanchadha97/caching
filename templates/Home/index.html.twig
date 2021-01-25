@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block title %}Github Users!{% endblock %}
+{% block body %}
+    <div class="mt-3 container">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">TITLE</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr>
+                        <th scope="row">{{user.id}}</th>
+                        <td>{{user.title}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ path('app_home',{page: counter - 1})}}">Prev</a>
+        <a href="{{ path('app_home',{page: counter + 1})}}" class="float-right">Next </a>
+    </div>
+{% endblock %}
