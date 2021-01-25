@@ -12,8 +12,8 @@ class HomeController extends AbstractController
     /**
      * @Route("/{page}",name="app_home",defaults={"page"=0})
      */
-    public function home(Fetcher $fetch, Paginator $paginator, $page){
-        $result = $paginator->pagination(json_decode($fetch->getUsers()),$page*10,10);
+    public function home(Fetcher $fetch,$page){
+        $result = json_decode($fetch->getUsers());
         return $this->render('Home/index.html.twig',[
             'users' => $result,
             'counter' => $page
