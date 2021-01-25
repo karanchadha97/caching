@@ -19,7 +19,7 @@ class MailController extends AbstractController
                     ->to('aatif8015@gmail.com')
                     ->subject('Testing mailer')
                     ->text('My first mail which I sent through Symfony')
-                    ->attachFromPath('Anshul Jindal.pdf');
+                    ->attachFromPath('path/to/Karan Chadha.pdf');
 
         $mailer->send($email);
         return $this->json([
